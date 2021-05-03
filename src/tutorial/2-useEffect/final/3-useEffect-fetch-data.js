@@ -1,41 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-const url = 'https://api.github.com/users';
+const url = 'https://api.github.com/users'
 
-// second argument
+// Reqiurements: Show Github user from Github API
+// Display user info
+// 1) Avatar
+// 2) Name
+// 3) Has link to github profile
+
+// API helper: fetch https://reactjs.org/docs/faq-ajax.html
+// CSS Classname helper
+/* <ul className="users">
+  <li>
+    <img  />
+    ...
+  </li>
+</ul> */
 
 const UseEffectFetchData = () => {
-  const [users, setUsers] = useState([]);
-
-  const getUsers = async () => {
-    const response = await fetch(url);
-    const users = await response.json();
-    setUsers(users);
-    // console.log(users);
-  };
+  const [users, setUser] = useState([])
+  function fetchUser() {
+    fetch(url)
+      .then((response) => response.json())
+      .then((users) => {
+        setUser(users)
+      })
+  }
 
   useEffect(() => {
-    getUsers();
-  }, []);
-  return (
-    <>
-      <h3>github users</h3>
-      <ul className='users'>
-        {users.map((user) => {
-          const { id, login, avatar_url, html_url } = user;
-          return (
-            <li key={id}>
-              <img src={avatar_url} alt={login} />
-              <div>
-                <h4>{login}</h4>
-                <a href={html_url}>profile</a>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
-};
+    fetchUser()
+  }, [])
 
-export default UseEffectFetchData;
+  return (
+    <div>
+      <h2>Github users</h2>
+      <ul className="users">
+        {users.map((user) => (
+          <li>
+            <img src={user.avatar_url} alt={user.log} />
+            <div>
+              <h4>{user.login}</h4>
+              <a href={user.html_url} target="blank">
+                Profile
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default UseEffectFetchData
