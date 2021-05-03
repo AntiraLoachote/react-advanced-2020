@@ -1,35 +1,12 @@
-## Corresponding Projects
+## React Tutorial Projects For Starter
 
-#### useState
+#### How to run project
 
-1. Birthday Reminder
+1. Folk this repo and Clone your repo
+2. Yarn install after clone repo
+3. Yarn start
 
-#### useEffect and Conditional Rendering
+#### Special Thanks:
 
-2. Tours
-3. Reviews
-4. Accordion
-5. Menu
-6. Tabs
-7. Slider
-
-#### Forms
-
-8. Lorem Ipsum Generator
-9. Color Shades Generator
-10. Grocery Bud
-
-#### useRef
-
-11. Navbar
-
-#### useContext
-
-12. Modal and Sidebar
-13. Stripe Menus
-
-#### useReducer and useContext
-
-14. Cart
-
-#### React Router
+1. FreeCodeCamp Youtube channel: https://www.youtube.com/watch?v=4UZrsTqkcW4
+2. Original tutorial repo: https://github.com/john-smilga/react-advanced-2020

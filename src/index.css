@@ -318,3 +318,28 @@ p {
   text-transform: capitalize;
   cursor: pointer;
 }
+
+.disabled-cursor {
+  pointer-events: none;
+
+  color: #c7c7c7;
+}
+
+.bg-white {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-cneter {
+  align-items: center;
+}
+
+.text-header {
+  background: #66dcfe;
+  color: hsl(240deg 7% 97%);
+  padding: 16px;
+}
