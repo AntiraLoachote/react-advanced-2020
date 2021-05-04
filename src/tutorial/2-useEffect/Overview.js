@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Emoji from '../../Emoji'
 
 import FirstTutorial from './final/1-useEffect-basics'
 import SecondTutorial from './final/2-useEffect-cleanup'
@@ -32,7 +33,9 @@ export default function UseEffectOverview() {
       <>
         <br />
         <Link to="/use-effect/tutorial">
-          <h3>👉🏻 Go to Tutorial</h3>
+          <h3>
+            <Emoji icon="👉🏻" /> Go to Tutorial
+          </h3>
         </Link>
         <br />
         <h4>1-useEffect-basics.js</h4>

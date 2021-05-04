@@ -24,7 +24,7 @@ function ActionLink() {
 
   return (
     <>
-      <a href="#" onClick={handleClick}>
+      <a href="/home" onClick={handleClick}>
         Click me
       </a>
     </>

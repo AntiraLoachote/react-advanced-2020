@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Emoji from '../../Emoji.js'
 import FirstTutorial from './final/1-useState-basics.js'
 import SecondTutorial from './final/2-useState-array'
 
@@ -7,7 +8,9 @@ export default function UseStateOverview() {
   return (
     <>
       <Link to="/use-state/tutorial">
-        <h3>👉🏻 Go to Tutorial</h3>
+        <h3>
+          <Emoji icon="👉🏻" /> Go to Tutorial
+        </h3>
       </Link>
       <hr></hr>
       <br />

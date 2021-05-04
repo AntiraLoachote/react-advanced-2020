@@ -1,4 +1,5 @@
 import React from 'react'
+import Emoji from '../../Emoji'
 import { JSXCSSAndJavascript } from './JSXCSSAndJavascript'
 
 //JSX Rules
@@ -9,8 +10,12 @@ function JSXRules() {
       <ul>
         <li>
           <b>1. return single element</b> (div/section/ Fragment)
-          <p>✅ {`  return <h1>Hello, world!</h1>`}</p>
-          <p>❌ {`  return <p>1<p/> <h1>Hello, world!</h1>`}</p>
+          <p>
+            <Emoji icon="✅" /> {`  return <h1>Hello, world!</h1>`}
+          </p>
+          <p>
+            <Emoji icon="❌" /> {`  return <p>1<p/> <h1>Hello, world!</h1>`}
+          </p>
         </li>
         <li>
           2. use <b>camelCase</b> for html attribute

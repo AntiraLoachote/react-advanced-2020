@@ -1,4 +1,5 @@
 import React from 'react'
+import Emoji from '../../Emoji'
 
 export default function JavascriptES6() {
   // Normal & Arrow Function
@@ -38,16 +39,13 @@ export default function JavascriptES6() {
       <h3>Javascript ES6</h3>
       <p>Normal & Arrow Function</p>
       <p>Object Initialozer</p>
-      <a
-        href="https://javascript.info/destructuring-assignment#array-destructuring"
-        target="_blank"
-      >
-        👉🏻 Destructuring assignment
+      <a href="https://javascript.info/destructuring-assignment#array-destructuring">
+        <Emoji icon="👉🏻" /> Destructuring assignment
       </a>
       <p>Object Destructuring</p>
       <p>Array Destructuring</p>
-      <a href="https://javascript.info/import-export" target="_blank">
-        👉🏻 Import and Export Statements
+      <a href="https://javascript.info/import-export">
+        <Emoji icon="👉🏻" /> Import and Export Statements
       </a>
       <br />
       <br />
