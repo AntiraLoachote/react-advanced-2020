@@ -31,7 +31,9 @@ function SimpleProps() {
         <textarea
           rows="3"
           cols="50"
-          value={`<Message text="I'm props."></Message>`}
+          value={`function WelcomePage(){
+  return  <Message text="I'm props."></Message>
+}`}
         ></textarea>
       </p>
 
