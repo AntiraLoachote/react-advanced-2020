@@ -6,6 +6,12 @@ function ReactIntro() {
   return (
     <div>
       <h3>Basic</h3>
+      <Link to="virtual-dom">
+        <h4>
+          <Emoji icon="👉🏻" />
+          Virtual DOM Concept
+        </h4>
+      </Link>
       <Link to="first-component">
         <h4>
           <Emoji icon="👉🏻" />

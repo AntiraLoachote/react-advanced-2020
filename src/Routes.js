@@ -13,6 +13,7 @@ import NestedComponents from './tutorial/0-basics/NestedComponents'
 import SimpleProps from './tutorial/0-basics/Props'
 import SimpleList from './tutorial/0-basics/SimpleList'
 import SimpleListTutorial from './tutorial/0-basics/SimpleList/Tutorial'
+import VirtualDom from './tutorial/0-basics/VirtualDom'
 import UseStateOverview from './tutorial/1-useState/Overview'
 import UseStateTutorial from './tutorial/1-useState/Tutorial'
 import UseEffectOverview from './tutorial/2-useEffect/Overview'
@@ -31,6 +32,10 @@ const Routes = () => {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+
+        <Route path="/virtual-dom">
+          <VirtualDom />
         </Route>
         <Route path="/first-component">
           <FirstComponent />

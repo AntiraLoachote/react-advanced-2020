@@ -13,8 +13,8 @@ function Home() {
           <h3>The Benefits of React:</h3>
         </div>
         <h4>- Speed of development process</h4>
-        <h4>- Flexibility</h4>
         <h4>- Performance: Virtual DOM</h4>
+        <h4>- Flexibility</h4>
         <h4>- Usability: Reusable and customizable components</h4>
         <h4>- It’s easy to learn</h4>
         <h4>- Strong community support</h4>
