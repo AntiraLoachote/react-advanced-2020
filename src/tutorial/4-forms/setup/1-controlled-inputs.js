@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
-// JS
-// const input = document.getElementById('myText');
-// const inputValue = input.value
-// React
-// value, onChange
+import React from 'react'
+
+// Requirement:
+// User want to add person form (Reqiured: First name, email input and age)
+// User want to see people info (First name, email and age).
+// Can add duplicate First name or email
 
 const ControlledInputs = () => {
-  return <h1>controlled inputs</h1>;
-};
+  return (
+    <>
+      <form className="form">
+        <div className="form-control">
+          <label>First name : </label>
+          <input type="text" name="firstName" />
+        </div>
+        <button type="submit">add person</button>
+      </form>
+    </>
+  )
+}
 
-export default ControlledInputs;
+export default ControlledInputs

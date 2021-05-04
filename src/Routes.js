@@ -17,6 +17,8 @@ import UseStateOverview from './tutorial/1-useState/Overview'
 import UseStateTutorial from './tutorial/1-useState/Tutorial'
 import UseEffectOverview from './tutorial/2-useEffect/Overview'
 import UseEffectTutorial from './tutorial/2-useEffect/Tutorial'
+import FormsOverview from './tutorial/4-forms/Overview'
+import FormsTutorial from './tutorial/4-forms/Tutorial'
 
 const Routes = () => {
   return (
@@ -30,74 +32,78 @@ const Routes = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <BasicRoutes />
+        <Route path="/first-component">
+          <FirstComponent />
+        </Route>
+
+        <Route path="/jsx">
+          <JSXIntro />
+        </Route>
+        <Route path="/nested">
+          <NestedComponents />
+        </Route>
+
+        <Route path="/props">
+          <SimpleProps />
+        </Route>
+
+        <Route path="/event-handler">
+          <EventHandler />
+        </Route>
+
+        <Route path="/ec6">
+          <JavascriptES6 />
+        </Route>
+
+        <Route
+          path="/simple-list"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={SimpleList} exact />
+              <Route path={`${url}/tutorial`} component={SimpleListTutorial} />
+            </>
+          )}
+        />
+
+        {/* AdvancedRoutes */}
+        <Route path="/hooks">
+          <HookIntro />
+        </Route>
+
+        <Route
+          path="/use-state"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={UseStateOverview} exact />
+              <Route path={`${url}/tutorial`} component={UseStateTutorial} />
+            </>
+          )}
+        />
+        <Route
+          path="/use-effect"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={UseEffectOverview} exact />
+              <Route path={`${url}/tutorial`} component={UseEffectTutorial} />
+            </>
+          )}
+        />
+
+        <Route
+          path="/forms"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={FormsOverview} exact />
+              <Route path={`${url}/tutorial`} component={FormsTutorial} />
+            </>
+          )}
+        />
+
         <Route path="*">
           <p>Unknown page :(</p>
         </Route>
       </Switch>
     </Router>
-  )
-}
-function BasicRoutes() {
-  return (
-    <>
-      <Route path="/first-component">
-        <FirstComponent />
-      </Route>
-
-      <Route path="/jsx">
-        <JSXIntro />
-      </Route>
-      <Route path="/nested">
-        <NestedComponents />
-      </Route>
-
-      <Route path="/props">
-        <SimpleProps />
-      </Route>
-
-      <Route path="/event-handler">
-        <EventHandler />
-      </Route>
-
-      <Route path="/ec6">
-        <JavascriptES6 />
-      </Route>
-
-      <Route
-        path="/simple-list"
-        render={({ match: { url } }) => (
-          <>
-            <Route path={`${url}/`} component={SimpleList} exact />
-            <Route path={`${url}/tutorial`} component={SimpleListTutorial} />
-          </>
-        )}
-      />
-
-      {/* AdvancedRoutes */}
-      <Route path="/hooks">
-        <HookIntro />
-      </Route>
-
-      <Route
-        path="/use-state"
-        render={({ match: { url } }) => (
-          <>
-            <Route path={`${url}/`} component={UseStateOverview} exact />
-            <Route path={`${url}/tutorial`} component={UseStateTutorial} />
-          </>
-        )}
-      />
-      <Route
-        path="/use-effect"
-        render={({ match: { url } }) => (
-          <>
-            <Route path={`${url}/`} component={UseEffectOverview} exact />
-            <Route path={`${url}/tutorial`} component={UseEffectTutorial} />
-          </>
-        )}
-      />
-    </>
   )
 }
 
