@@ -9,6 +9,8 @@ import JavascriptES6 from './tutorial/0-basics/JavascriptES6'
 import JSXIntro from './tutorial/0-basics/JSXIntro'
 import NestedComponents from './tutorial/0-basics/NestedComponents'
 import SimpleProps from './tutorial/0-basics/Props'
+import SimpleList from './tutorial/0-basics/SimpleList'
+import SimpleListTutorial from './tutorial/0-basics/SimpleList/Tutorial'
 import UseStateOverview from './tutorial/1-useState/Overview'
 import UseStateTutorial from './tutorial/1-useState/Tutorial'
 import UseEffectOverview from './tutorial/2-useEffect/Overview'
@@ -57,6 +59,16 @@ function BasicRoutes() {
       <Route path="/ec6">
         <JavascriptES6 />
       </Route>
+
+      <Route
+        path="/simple-list"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/`} component={SimpleList} exact />
+            <Route path={`${url}/tutorial`} component={SimpleListTutorial} />
+          </>
+        )}
+      />
 
       {/* AdvancedRoutes */}
       <Route

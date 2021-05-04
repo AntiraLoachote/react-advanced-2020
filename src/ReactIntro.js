@@ -30,7 +30,7 @@ function ReactIntro() {
       </Link>
 
       <Link to="simple-list">
-        <h4>👉🏻 ⭐️ Simple List</h4>
+        <h4>👩🏻‍💻 ⭐️ Simple List</h4>
       </Link>
     </div>
   )
