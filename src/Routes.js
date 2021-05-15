@@ -20,6 +20,10 @@ import UseEffectOverview from './tutorial/2-useEffect/Overview'
 import UseEffectTutorial from './tutorial/2-useEffect/Tutorial'
 import FormsOverview from './tutorial/4-forms/Overview'
 import FormsTutorial from './tutorial/4-forms/Tutorial'
+import UseRefOverview from './tutorial/5-useRef/Overview'
+import UseRefTutorial from './tutorial/5-useRef/Tutorial'
+import UseReducerOverview from './tutorial/6-useReducer/Overview'
+import UseReducerTutorial from './tutorial/6-useReducer/Tutorial'
 
 const Routes = () => {
   return (
@@ -100,6 +104,26 @@ const Routes = () => {
             <>
               <Route path={`${url}/`} component={FormsOverview} exact />
               <Route path={`${url}/tutorial`} component={FormsTutorial} />
+            </>
+          )}
+        />
+
+        <Route
+          path="/use-ref"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={UseRefOverview} exact />
+              <Route path={`${url}/tutorial`} component={UseRefTutorial} />
+            </>
+          )}
+        />
+
+        <Route
+          path="/use-reducer"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={UseReducerOverview} exact />
+              <Route path={`${url}/tutorial`} component={UseReducerTutorial} />
             </>
           )}
         />

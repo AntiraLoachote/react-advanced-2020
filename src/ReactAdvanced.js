@@ -30,25 +30,25 @@ function ReactAdvanced() {
         </h4>
       </Link>
 
-      <Link to="useRef" disabled className="disabled-cursor">
+      <Link to="use-ref">
         <h4>
           <Emoji icon="👉🏻" /> useRef
         </h4>
       </Link>
 
-      <Link to="useReducer" className="disabled-cursor">
+      <Link to="use-reducer">
         <h4>
           <Emoji icon="👉🏻" /> useReducer
         </h4>
       </Link>
 
-      <Link to="prop-drilling" className="disabled-cursor">
+      <Link to="prop-drilling">
         <h4>
           <Emoji icon="👉🏻" /> Prop Drilling (optional)
         </h4>
       </Link>
 
-      <Link to="useContext" className="disabled-cursor">
+      <Link to="useContext">
         <h4>
           <Emoji icon="👉🏻" /> useContext (optional)
         </h4>
@@ -57,12 +57,6 @@ function ReactAdvanced() {
       <Link to="custom-hook" className="disabled-cursor">
         <h4>
           <Emoji icon="👉🏻" /> custom hooks (optional)
-        </h4>
-      </Link>
-
-      <Link to="prop-types" className="disabled-cursor">
-        <h4>
-          <Emoji icon="👉🏻" /> Prop-types (optional)
         </h4>
       </Link>
 
