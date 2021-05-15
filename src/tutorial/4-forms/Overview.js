@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Emoji from '../../Emoji.js'
-import FirstTutorial from './final/1-controlled-inputs'
+import SimpleFormFinal from './final'
 
 export default function FormsOverview() {
   return (
@@ -13,8 +13,8 @@ export default function FormsOverview() {
       </Link>
       <hr></hr>
       <br />
-      <h4>1-controlled-inputs</h4>
-      <FirstTutorial></FirstTutorial>
+      <h4>SimpleForm.tsx</h4>
+      <SimpleFormFinal />
       <br />
     </>
   )

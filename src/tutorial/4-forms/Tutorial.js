@@ -1,10 +1,10 @@
 import React from 'react'
-import Setup from './setup/1-controlled-inputs'
+import SimpleFormSetup from './setup'
 
 export default function FormsTutorial() {
   return (
     <>
-      <Setup />
+      <SimpleFormSetup />
     </>
   )
 }

@@ -1,25 +1,34 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, useState, SyntheticEvent } from 'react'
 
 // Requirement:
 // User want to add person form (Reqiured: First name, email input and age)
 // User want to see people info (First name, email and age).
-// Can add duplicate value
-// After submit should clear up input text
 
-const ControlledInputs = () => {
-  const [person, setPerson] = useState({ firstName: '', email: '', age: '' })
-  const [people, setPeople] = useState([
-    { firstName: 'Pan', email: 'pan@simplesat.io', age: 26 },
-  ])
+type Person = {
+  firstName: string
+  email: string
+  age: number
+}
+export default function SimpleFormSetup() {
+  const initailPerson: Person = {
+    firstName: '',
+    email: '',
+    age: null,
+  }
+  const [person, setPerson] = useState(initailPerson)
+  const [people, setPeople] = useState<Person[]>([])
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    setPeople([...people, person])
-    setPerson({ firstName: '', email: '' })
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>): void {
+    setPerson({
+      ...person,
+      [e.target.name]: e.target.value,
+    })
   }
 
-  function handleInputChange(e) {
-    setPerson({ ...person, [e.target.name]: e.target.value })
+  function handleSubmit(e: SyntheticEvent): void {
+    e.preventDefault()
+    setPeople([...people, person])
+    setPerson({ firstName: '', email: '', age: null })
   }
 
   return (
@@ -32,17 +41,15 @@ const ControlledInputs = () => {
             name="firstName"
             value={person.firstName}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div className="form-control">
           <label>Email : </label>
           <input
-            type="email"
+            type="text"
             name="email"
             value={person.email}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div className="form-control">
@@ -52,11 +59,22 @@ const ControlledInputs = () => {
             name="age"
             value={person.age}
             onChange={handleInputChange}
-            required
           />
         </div>
         <button type="submit">add person</button>
       </form>
+      <PeopleList people={people} />
+    </>
+  )
+}
+
+type Props = {
+  people: Person[]
+}
+
+function PeopleList({ people }: Props): JSX.Element {
+  return (
+    <>
       {people.map((person, index) => (
         <div key={index} className="item">
           <h4>
@@ -69,5 +87,3 @@ const ControlledInputs = () => {
     </>
   )
 }
-
-export default ControlledInputs
