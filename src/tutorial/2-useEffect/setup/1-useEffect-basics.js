@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // by default runs after every re-render
 
 // Requirements
@@ -9,6 +9,10 @@ import React, { useState } from 'react'
 
 const UseEffectBasics = () => {
   const [value, setValue] = useState(0)
+
+  useEffect(() => {
+    console.log('call useEffect')
+  })
 
   return (
     <>

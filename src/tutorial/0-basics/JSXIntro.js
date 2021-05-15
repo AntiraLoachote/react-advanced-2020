@@ -2,6 +2,14 @@ import React from 'react'
 import Emoji from '../../Emoji'
 import { JSXCSSAndJavascript } from './JSXCSSAndJavascript'
 
+function JSX() {
+  return (
+    <div>
+      <p>TEST</p>
+    </div>
+  )
+}
+
 //JSX Rules
 function JSXRules() {
   return (
@@ -20,6 +28,7 @@ function JSXRules() {
         <li>
           2. use <b>camelCase</b> for html attribute
           <p>{`<button onClick={}>Click</button>`}</p>
+          <JSX />
         </li>
         <li>
           3. use <b>className</b> instead of <s>class</s>

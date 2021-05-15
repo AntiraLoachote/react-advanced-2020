@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // UI Requirement: Random number 0-9 generator
 // 1) Show number 0-9 and show 1 in first time
@@ -7,7 +7,21 @@ import React from 'react'
 // logic helper: : https://www.w3schools.com/js/js_random.asp
 
 const UseStateBasics = () => {
-  return <h2>useState basic example</h2>
+  const [count, setCount] = useState(1)
+
+  function handleClick() {
+    const randomNumber = Math.floor(Math.random() * 10)
+    setCount(randomNumber)
+  }
+
+  return (
+    <>
+      <h3>Number: {count}</h3>
+      <button className="btn" onClick={handleClick}>
+        Random
+      </button>
+    </>
+  )
 }
 
 export default UseStateBasics

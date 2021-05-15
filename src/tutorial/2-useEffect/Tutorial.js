@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './setup/1-useEffect-basics'
+import Setup from './setup/3-useEffect-fetch-data'
 
 export default function UseEffectTutorial() {
   return (

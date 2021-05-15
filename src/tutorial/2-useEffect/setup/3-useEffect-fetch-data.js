@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const url = 'https://api.github.com/users'
 
@@ -18,10 +18,39 @@ const url = 'https://api.github.com/users'
 </ul> */
 
 const UseEffectFetchData = () => {
+  const [users, setUser] = useState([])
+  function fetchUser() {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setUser(data))
+  }
+
+  useEffect(() => {
+    fetchUser()
+  }, [])
+
   return (
     <div>
       <h2>Github users</h2>
-      {/* write our HTML */}
+      <ul className="users">
+        {users.map((user) => {
+          return (
+            <li>
+              <img src={user.avatar_url} alt={user.login} />
+              <div>
+                <h4>{user.login}</h4>
+                <a
+                  href={user.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Profile
+                </a>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }

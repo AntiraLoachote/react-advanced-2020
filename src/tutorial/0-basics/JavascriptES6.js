@@ -8,10 +8,10 @@ export default function JavascriptES6() {
   }
   sayHi()
 
-  const sayHello = () => {
+  const sayHello1 = () => {
     console.log('>> Hello')
   }
-  sayHello()
+  sayHello1()
 
   //Object Initialozer
   const name = 'Pan'

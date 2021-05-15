@@ -1,10 +1,11 @@
 import React from 'react'
-import Setup from './setup/1-useState-basics.js'
+// import Setup from './setup/2-useState-array'
+import Final from './final/4-useState-counter'
 
 export default function UseStateTutorial() {
   return (
     <>
-      <Setup />
+      <Final />
     </>
   )
 }
