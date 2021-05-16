@@ -42,33 +42,39 @@ function ReactAdvanced() {
         </h4>
       </Link>
 
-      <Link to="prop-drilling">
+      <Link to="prop-drilling" className="disabled-cursor">
         <h4>
-          <Emoji icon="👉🏻" /> Prop Drilling (optional)
+          <Emoji icon="👉🏻" /> Prop Drilling
         </h4>
       </Link>
 
-      <Link to="useContext">
+      <Link to="use-context/tutorial">
         <h4>
-          <Emoji icon="👉🏻" /> useContext (optional)
+          <Emoji icon="👉🏻" /> useContext
         </h4>
       </Link>
 
-      <Link to="custom-hook" className="disabled-cursor">
+      <Link to="custom-hooks">
         <h4>
-          <Emoji icon="👉🏻" /> custom hooks (optional)
+          <Emoji icon="👉🏻" /> Custom hooks
         </h4>
       </Link>
 
-      <Link to="react-router" className="disabled-cursor">
+      <Link to="custom-hooks/tutorial">
         <h4>
-          <Emoji icon="👉🏻" /> 👍🏻 React router
+          <Emoji icon="👉🏻" /> Custom hooks (tutorial)
         </h4>
       </Link>
 
-      <Link to="performace-optimization" className="disabled-cursor">
+      <Link to="performace-optimization">
         <h4>
-          <Emoji icon="👉🏻" /> Performance Optimization (optional)
+          <Emoji icon="👉🏻" /> Performance Optimization
+        </h4>
+      </Link>
+
+      <Link to="performace-optimization/tutorial">
+        <h4>
+          <Emoji icon="👉🏻" /> Performance Optimization (tutorial)
         </h4>
       </Link>
     </div>

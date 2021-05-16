@@ -16,6 +16,8 @@ import SimpleListTutorial from './tutorial/0-basics/SimpleList/Tutorial'
 import VirtualDom from './tutorial/0-basics/VirtualDom'
 import UseStateOverview from './tutorial/1-useState/Overview'
 import UseStateTutorial from './tutorial/1-useState/Tutorial'
+import PerformaceContainer from './tutorial/12-memo-useMemo-useCallback/final'
+import PerformaceContainerSetup from './tutorial/12-memo-useMemo-useCallback/setup'
 import UseEffectOverview from './tutorial/2-useEffect/Overview'
 import UseEffectTutorial from './tutorial/2-useEffect/Tutorial'
 import FormsOverview from './tutorial/4-forms/Overview'
@@ -24,6 +26,9 @@ import UseRefOverview from './tutorial/5-useRef/Overview'
 import UseRefTutorial from './tutorial/5-useRef/Tutorial'
 import UseReducerOverview from './tutorial/6-useReducer/Overview'
 import UseReducerTutorial from './tutorial/6-useReducer/Tutorial'
+import UseContextTutorial from './tutorial/8-useContext/Tutorial'
+import ToggleUsage from './tutorial/9-custom-hooks/final'
+import ToggleUsageSetup from './tutorial/9-custom-hooks/setup'
 
 const Routes = () => {
   return (
@@ -124,6 +129,38 @@ const Routes = () => {
             <>
               <Route path={`${url}/`} component={UseReducerOverview} exact />
               <Route path={`${url}/tutorial`} component={UseReducerTutorial} />
+            </>
+          )}
+        />
+
+        <Route
+          path="/use-context"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/tutorial`} component={UseContextTutorial} />
+            </>
+          )}
+        />
+
+        <Route
+          path="/custom-hooks"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={ToggleUsage} exact />
+              <Route path={`${url}/tutorial`} component={ToggleUsageSetup} />
+            </>
+          )}
+        />
+
+        <Route
+          path="/performace-optimization"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={PerformaceContainer} exact />
+              <Route
+                path={`${url}/tutorial`}
+                component={PerformaceContainerSetup}
+              />
             </>
           )}
         />
