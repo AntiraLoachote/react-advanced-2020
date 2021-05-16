@@ -24,20 +24,47 @@ type FruitState = {
 }
 
 export default function Final() {
-  const initialState: FruitState = {
-    fruits: [],
-    toastMessage: '',
-    isToastOpen: false,
-  }
+  // const initialState: FruitState = {
+  //   fruits: [],
+  //   toastMessage: '',
+  //   isToastOpen: false,
+  // }
 
   const [name, setName] = useState('')
+  const [fruits, setFruits] = useState<string[]>([])
+  const [toastMessage, setToastMessage] = useState('')
+  const [isToastOpen, setIsToastOpen] = useState(false)
 
   function handleSubmit(e: SyntheticEvent): void {
     e.preventDefault()
+
+    if (name === '') {
+      setIsToastOpen(true)
+      setToastMessage('Please add name !')
+    } else {
+      setFruits([...fruits, name])
+      setName('')
+      setIsToastOpen(true)
+      setToastMessage(`${name} added`)
+    }
+  }
+
+  function removeFruit(name: string) {
+    const newFruits = fruits.filter((fruit) => fruit !== name)
+    setFruits(newFruits)
+    setIsToastOpen(true)
+    setToastMessage(`${name} removed`)
+  }
+
+  function closeModal() {
+    setIsToastOpen(false)
   }
 
   return (
     <>
+      {isToastOpen && (
+        <Toast message={toastMessage} closeModal={closeModal}></Toast>
+      )}
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-control">
           <label>Fruit Name : </label>
@@ -51,7 +78,7 @@ export default function Final() {
 
         <button type="submit">add fruit</button>
       </form>
-      {/* <FruitItems fruits={} remove={} /> */}
+      <FruitItems fruits={fruits} removeFruit={removeFruit} />
     </>
   )
 }
@@ -65,11 +92,31 @@ function Toast({ message, closeModal }: ToastProps) {
   useEffect(() => {
     setTimeout(() => {
       closeModal()
-    }, 2000)
+    }, 3000)
   })
   return (
     <div className="modal">
       <p>{message}</p>
     </div>
+  )
+}
+
+type Props = {
+  fruits: string[]
+  removeFruit: (name: string) => void
+}
+
+function FruitItems({ fruits, removeFruit }: Props): JSX.Element {
+  return (
+    <>
+      {fruits.map((name, index) => (
+        <div key={index} className="item">
+          <h4>
+            {index + 1}) {name}
+          </h4>
+          <button onClick={() => removeFruit(name)}>remove</button>
+        </div>
+      ))}
+    </>
   )
 }

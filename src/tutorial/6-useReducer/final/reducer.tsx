@@ -1,8 +1,4 @@
-type FruitState = {
-  fruits: string[]
-  toastMessage: string
-  isToastOpen: boolean
-}
+import { FruitState } from '.'
 
 type ACTIONTYPE =
   | { type: 'ADD_FRUIT'; payload: string }

@@ -42,15 +42,9 @@ function ReactAdvanced() {
         </h4>
       </Link>
 
-      <Link to="prop-drilling" className="disabled-cursor">
-        <h4>
-          <Emoji icon="👉🏻" /> Prop Drilling
-        </h4>
-      </Link>
-
       <Link to="use-context/tutorial">
         <h4>
-          <Emoji icon="👉🏻" /> useContext
+          <Emoji icon="👉🏻" /> Prop Drilling + useContext
         </h4>
       </Link>
 

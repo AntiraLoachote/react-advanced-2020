@@ -19,7 +19,7 @@ import { fruitsReducer } from './reducer'
 // 2) Reducer - switch case to do action
 // 3) Store - has state
 
-type FruitState = {
+export type FruitState = {
   fruits: string[]
   toastMessage: string
   isToastOpen: boolean
@@ -72,17 +72,17 @@ export default function Final() {
 
         <button type="submit">add fruit</button>
       </form>
-      <FruitItems fruits={state.fruits} remove={removeFruit} />
+      <FruitItems fruits={state.fruits} removeFruit={removeFruit} />
     </>
   )
 }
 
 type Props = {
   fruits: string[]
-  remove: (name: string) => void
+  removeFruit: (name: string) => void
 }
 
-function FruitItems({ fruits, remove }: Props): JSX.Element {
+function FruitItems({ fruits, removeFruit }: Props): JSX.Element {
   return (
     <>
       {fruits.map((name, index) => (
@@ -90,7 +90,7 @@ function FruitItems({ fruits, remove }: Props): JSX.Element {
           <h4>
             {index + 1}) {name}
           </h4>
-          <button onClick={() => remove(name)}>remove</button>
+          <button onClick={() => removeFruit(name)}>remove</button>
         </div>
       ))}
     </>
@@ -106,7 +106,7 @@ function Toast({ message, closeModal }: ToastProps) {
   useEffect(() => {
     setTimeout(() => {
       closeModal()
-    }, 2000)
+    }, 3000)
   })
   return (
     <div className="modal">
